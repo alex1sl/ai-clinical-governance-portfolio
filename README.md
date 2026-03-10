@@ -1,7 +1,8 @@
 # Alexis Smith
 ### AI Governance & Risk | Clinical Strategist | Technical Project Manager
 
-**(https://www.linkedin.com/in//alexis-s2/) | (https://github.com/alex1sl/AI-Clinical-Governance-Portfolio) | (mailto:alesmith283@gmail.com)**
+**[LinkedIn](https://www.linkedin.com/in/alexis-s2/) | [GitHub Portfolio](https://github.com/alex1sl/AI-Clinical-Governance-Portfolio) | [Email](mailto:alesmith283@gmail.com)**
+
 ---
 
 ---
@@ -32,6 +33,5 @@ Standard LLMs frequently fail at "anchor date" calculations, often misidentifyin
 * **SQL:** Utilized for verifying anchor dates against scheduling data.
 * **Smartsheet:** Managed version control for model evaluation cycles and project timelines.
 * **HEDIS MY 2026 Standards:** Applied as the primary regulatory framework for safety benchmarks.
-
 
 
