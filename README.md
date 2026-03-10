@@ -22,7 +22,11 @@ Standard LLMs frequently fail at "anchor date" calculations, often misidentifyin
 * **Red-Teaming Workflow:** Proactively identified logic failures where the model failed to account for leap years, weekends, or overlapping visits.
 * **Governance Protocol:** Implemented a "Threshold Logic" framework that flags any AI-generated follow-up date exceeding 28 days for mandatory human-in-the-loop (HITL) review.
 
+## 🛠 Technical Documentation & Proof
 
+**View SQL Validation Script:** https://github.com/alex1sl/AI-Clinical-Governance-Portfolio/blob/main/HEDIS_Asthma_Validation.sql
+
+**View Model Safety Card:** https://github.com/alex1sl/AI-Clinical-Governance-Portfolio/blob/main/Model_Card_Asthma_HEDIS.md
 
 ### **Technical Validation Tools**
 * **SQL:** Utilized for verifying anchor dates against scheduling data.
