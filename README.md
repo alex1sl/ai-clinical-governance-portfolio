@@ -9,8 +9,8 @@
       <p>
         <a href="https://www.linkedin.com/in/alexis-s2/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
         <a href="mailto:alesmith283@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-        <a href="https://github.com/alex1sl/AI-Clinical-Governance-Portfolio"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
       </p>
+      <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -10px;">Contact: <b>alesmith283@gmail.com</b></p>
     </div>
 
     <hr style="border: 0; border-top: 2px solid #EEEEEE; margin: 30px 0;">
@@ -21,11 +21,11 @@
       </p>
     </div>
 
-    <h2 style="color: #2c3e50; border-bottom: 2px solid #E6F3F7; padding-bottom: 10px;">🚀 Project: HEDIS Asthma 30-Day Logic Validation</h2>
+    <h2 style="color: #2c3e50; border-bottom: 2px solid #E6F3F7; padding-bottom: 10px;">🚀 Project: HEDIS Asthma 30-Day Follow-Up (Logic Validation)</h2>
 
     <h3><b>Executive Summary</b></h3>
     <p>
-      Operating as the <b>Clinical Strategist and AI Risk Professional</b>, I architected the governance framework for an LLM’s <b>temporal logic</b> to ensure strict adherence to regulatory mandates. This initiative focused on the <b>HEDIS MY 2026</b> requirement for 30-day follow-up appointments following acute asthma episodes, ensuring the model's output aligned with both clinical safety standards and value-based care objectives.
+      As the <b>Clinical Strategist and AI Risk Professional</b>, I architected the governance framework for an LLM’s <b>temporal logic</b> to ensure strict adherence to regulatory mandates. This initiative focused on the <b>HEDIS MY 2026</b> requirement for 30-day follow-up appointments following acute asthma episodes, ensuring the model's output aligned with both clinical safety standards and value-based care objectives.
     </p>
 
     <h3><b>The Governance Challenge</b></h3>
@@ -38,8 +38,8 @@
     <h3><b>Risk Mitigation & Red-Teaming Strategy</b></h3>
     <ul style="line-height: 1.6; margin-left: 20px;">
       <li><b>Safety Benchmarking:</b> Developed a validation dataset of 50+ clinical scenarios to test the LLM's ability to calculate the correct 30-day window from a discharge "anchor date."</li>
-      <li><b>Red-Teaming Workflow:</b> Proactively identified logic failures where the model failed to account for leap years, weekends, or overlapping visits.</li>
-      <li><b>Governance Protocol:</b> Implemented a "Threshold Logic" framework that flags any AI-generated follow-up date exceeding 28 days for mandatory <b>human-in-the-loop (HITL) review</b>.</li>
+      <li><b>Red-Teaming Workflow:</b> Identified logic failures where the model failed to account for <b>leap years, weekends, or overlapping visits</b>.</li>
+      <li><b>Governance Protocol:</b> Implemented a <b>"Threshold Logic" framework</b> that flags any AI-generated follow-up date exceeding 28 days for mandatory <b>human-in-the-loop (HITL) review</b>.</li>
     </ul>
 
     
@@ -47,19 +47,18 @@
     <hr style="border: 0; border-top: 1px solid #EEEEEE; margin: 30px 0;">
 
     <h2 style="color: #2c3e50;">🛠 Technical Documentation & Proof</h2>
-    <p><i>Access the full technical audit and validation scripts below:</i></p>
     
     <div align="center" style="margin: 25px 0;">
-      <a href="./Model_Card_Asthma_HEDIS.html"><img src="https://img.shields.io/badge/View_Model_Safety_Card-2c3e50?style=for-the-badge&logo=googledocs&logoColor=white" alt="Model Card"></a>
+      <a href="https://alex1sl.github.io/AI-Clinical-Governance-Portfolio/Model_Card_Asthma_HEDIS.html"><img src="https://img.shields.io/badge/View_Model_Safety_Card-2c3e50?style=for-the-badge&logo=googledocs&logoColor=white" alt="Model Card"></a>
       &nbsp;&nbsp;
-      <a href="./HEDIS_Asthma_Validation.sql"><img src="https://img.shields.io/badge/View_SQL_Validation-2c3e50?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL Script"></a>
+      <a href="https://github.com/alex1sl/AI-Clinical-Governance-Portfolio/blob/main/HEDIS_Asthma_Validation.sql"><img src="https://img.shields.io/badge/View_SQL_Validation-2c3e50?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL Script"></a>
     </div>
 
     <h3><b>Technical Validation Tools</b></h3>
     <ul style="line-height: 1.6; margin-left: 20px;">
       <li><b>SQL:</b> Utilized for verifying anchor dates against scheduling data.</li>
-      <li><b>Smartsheet:</b> Managed version control for model evaluation cycles and project timelines.</li>
-      <li><b>HEDIS MY 2026 Standards:</b> Applied as the primary regulatory framework for safety benchmarks.</li>
+      <li><b>Smartsheet:</b> Managed version control for model evaluation cycles.</li>
+      <li><b>HEDIS MY 2026 Standards:</b> Primary regulatory framework for safety benchmarks.</li>
     </ul>
 
     <hr style="border: 0; border-top: 2px solid #E6F3F7; margin: 40px 0;">
@@ -69,4 +68,7 @@
     </div>
 
   </div>
+</div>
+
+
 </div>
