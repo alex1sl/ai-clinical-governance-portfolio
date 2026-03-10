@@ -5,7 +5,7 @@
 
 ### **1. Model Details**
 * **Project Lead:** Alexis Smith, Clinical Strategist & AI Risk Professional
-* **Base Model:** GPT-4.5, Claude LLM (Large Language Model)
+* **Base Model:** GPT-4.5, Claude LLM 
 * **Model Type:** Generative Pre-trained Transformer optimized for Clinical Entity Recognition (CER) and Temporal Reasoning.
 * **Date:** March 2026
 * **Version:** 1.0 (Governance & Risk Assessment Phase)
@@ -20,9 +20,9 @@
 * **Data Diversity:** Includes varied note structures (e.g., SOAP notes, discharge summaries, and fragmented urgent care intake logs) to test model robustness.
 
 ### **4. Quantitative Analysis (Accuracy & Safety Metrics)**
-* **Temporal Logic Precision:** Percentage of output dates falling exactly within the 30-day regulatory window.
-* **Critical Failure Rate:** Frequency of "Hallucinated" dates where the model generated a follow-up date not supported by the input text.
-* **Compliance Sensitivity:** Model's ability to flag "borderline" cases (e.g., Day 29 or 30) as high-risk for HEDIS gap-in-care.
+* ** Metric 1: Temporal Logic Precision:** Percentage of output dates falling exactly within the 30-day regulatory window.
+* ** Metric 2: Critical Failure Rate:** Frequency of "Hallucinated" dates where the model generated a follow-up date not supported by the input text.
+* ** Compliance Sensitivity:** Model's ability to flag "borderline" cases (e.g., Day 29 or 30) as high-risk for HEDIS gap-in-care.
 
 ### **5. Risk Mitigation & Ethical Considerations**
 * **Bias Management:** Evaluated for performance parity across clinical terminologies used in different regional health systems.
