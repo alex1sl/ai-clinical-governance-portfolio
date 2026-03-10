@@ -1,5 +1,3 @@
-
-   
 <div style="background-color: #E6F3F7; color: #000000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; padding: 40px 20px;">
 
   <div style="max-width: 900px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
@@ -22,54 +20,36 @@
       </p>
     </div>
 
-    <h2 style="color: #2c3e50; border-bottom: 2px solid #E6F3F7; padding-bottom: 10px; margin-top: 40px;">🚀 Featured Project: HEDIS Asthma 30-Day Logic Validation</h2>
+    <h2 style="color: #2c3e50; border-bottom: 2px solid #E6F3F7; padding-bottom: 10px; margin-top: 40px; text-align: left;">🚀 Featured Project: HEDIS Asthma 30-Day Logic Validation</h2>
 
     <div style="text-align: left;">
       <h3><b>Executive Summary</b></h3>
       <p>
-        Operating as the <b>Clinical Strategist and AI Risk Professional</b>, I architected the governance framework for an AI’s <b>date calculation logic</b> to ensure strict adherence to regulatory mandates. This initiative focused on the <b>HEDIS MY 2026</b> requirement for 30-day follow-up appointments following acute asthma episodes.
+        Operating as the <b>Clinical Strategist and AI Risk Professional</b>, I architected the governance framework for an AI’s <b>date calculation logic</b> to ensure strict adherence to regulatory mandates.
       </p>
-
-      <h3><b>The Governance Challenge</b></h3>
-      <p>Standard AI models frequently fail at "anchor date" calculations. From a risk management perspective, these errors lead to:</p>
-      <ul style="line-height: 1.6; margin-left: 20px;">
-        <li><b>Regulatory Non-Compliance:</b> Failure to meet value-based care (VBC) metrics.</li>
-        <li><b>Operational Risk:</b> Misallocation of clinical resources and gaps in care.</li>
-      </ul>
 
       <h3><b>Risk Mitigation & Red-Teaming Strategy</b></h3>
       <ul style="line-height: 1.6; margin-left: 20px;">
-        <li><b>Safety Benchmarking:</b> Developed a validation dataset of 50+ clinical scenarios to test the LLM's accuracy in calculating 30-day windows.</li>
-        <li><b>Governance Protocol:</b> Implemented a "Threshold Logic" framework that flags any AI-generated date exceeding 28 days for mandatory <b>human-in-the-loop (HITL) review</b>.</li>
+        <li><b>Safety Benchmarking:</b> Developed validation datasets to test AI accuracy in 30-day windows.</li>
+        <li><b>Governance Protocol:</b> Implemented "Threshold Logic" flagging AI dates ≥ 28 days for <b>mandatory human review</b>.</li>
       </ul>
     </div>
 
-    
-
     <hr style="border: 0; border-top: 1px solid #EEEEEE; margin: 30px 0;">
 
-    <h2 style="color: #2c3e50;">🛠 Technical Proof & Documentation</h2>
-    <p><i>Use the buttons below to explore the detailed risk evaluation and technical logic:</i></p>
+    <h2 style="color: #2c3e50; text-align: left;">🛠 Technical Proof & Documentation</h2>
+    <p style="text-align: left;"><i>Use the buttons below to explore the detailed risk evaluation and technical logic:</i></p>
     
     <table width="100%" border="0" cellpadding="10" style="margin-top: 20px;">
       <tr>
         <td align="center" width="50%">
-          <a href="https://github.com/alex1sl/AI-Clinical-Governance-Portfolio/blob/main/Model_Card_Asthma_HEDIS.md" style="background-color: #2c3e50; color: #ffffff; padding: 15px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; display: block; font-size: 1.1em;">📄 View Model Safety Card</a>
+          <a href="https://alex1sl.github.io/AI-Clinical-Governance-Portfolio/Model_Card_Asthma_HEDIS" style="background-color: #2c3e50; color: #ffffff; padding: 15px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; display: block; font-size: 1.1em;">📄 View Model Safety Card</a>
         </td>
         <td align="center" width="50%">
-          <a href="https://github.com/alex1sl/AI-Clinical-Governance-Portfolio/blob/main/HEDIS_Asthma_Validation.sql" style="background-color: #2c3e50; color: #ffffff; padding: 15px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; display: block; font-size: 1.1em;">💻 View SQL Validation Script</a>
+          <a href="https://github.com/alex1sl/AI-Clinical-Governance-Portfolio/blob/main/HEDIS_Asthma_Validation.sql" style="background-color: #2c3e50; color: #ffffff; padding: 15px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; display: block; font-size: 1.1em;">💻 View SQL Script</a>
         </td>
       </tr>
     </table>
-
-    <div style="text-align: left; margin-top: 30px;">
-      <h3><b>Technical Tools Used</b></h3>
-      <ul style="line-height: 1.6; margin-left: 20px;">
-        <li><b>SQL:</b> Utilized for verifying anchor dates against clinical data.</li>
-        <li><b>Smartsheet:</b> Managed version control for model evaluation cycles.</li>
-        <li><b>HEDIS MY 2026 Standards:</b> Primary regulatory framework for safety benchmarks.</li>
-      </ul>
-    </div>
 
     <hr style="border: 0; border-top: 2px solid #E6F3F7; margin: 40px 0;">
 
@@ -79,3 +59,4 @@
 
   </div>
 </div>
+   
