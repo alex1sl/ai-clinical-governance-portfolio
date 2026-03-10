@@ -1,10 +1,5 @@
 # Alexis Smith
 ### AI Governance & Risk | Clinical Strategist | Technical Project Manager
-**[LinkedIn](https://www.linkedin.com/in/alexis-s2/) | [GitHub](https://github.com/alex1sl/AI-Clinical-Governance-Portfolio) | [Email Me](mailto:alesmith283@gmail.com)**
-
-
----
-
 ---
 ---
 
@@ -34,4 +29,6 @@ Standard LLMs frequently fail at "anchor date" calculations, often misidentifyin
 * **Smartsheet:** Managed version control for model evaluation cycles and project timelines.
 * **HEDIS MY 2026 Standards:** Applied as the primary regulatory framework for safety benchmarks.
 
-
+Contact Information
+Email: alesmith283@gmail.com 
+LinkedIn: linkedin.com/in/alexis-s2/
