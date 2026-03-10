@@ -1,7 +1,7 @@
 # Alexis Smith
 ### AI Governance & Risk | Clinical Strategist | Technical Project Manager
 
-**[LinkedIn](https://www.linkedin.com/in//alexis-s2/) | [GitHub Portfolio](https://github.com/alex1sl/AI-Clinical-Governance-Portfolio) | [Email](mailto:alesmith283@gmail.com)**
+**(https://www.linkedin.com/in//alexis-s2/) | (https://github.com/alex1sl/AI-Clinical-Governance-Portfolio) | (mailto:alesmith283@gmail.com)**
 ---
 
 ---
@@ -32,8 +32,6 @@ Standard LLMs frequently fail at "anchor date" calculations, often misidentifyin
 * **SQL:** Utilized for verifying anchor dates against scheduling data.
 * **Smartsheet:** Managed version control for model evaluation cycles and project timelines.
 * **HEDIS MY 2026 Standards:** Applied as the primary regulatory framework for safety benchmarks.
-## 🛠 Technical Governance Documentation
-Click the links below to view the detailed risk assessment and validation scripts for this project:
 
-* **[📄 View Model Safety Card](./Model_Card_Asthma_HEDIS.md)** – *Detailed AI risk assessment following NIST standards.*
-* **[💻 View SQL Validation Script](./HEDIS_Asthma_Validation.sql)** – *Technical proof of HEDIS date logic verification.*
+
+
