@@ -1,7 +1,7 @@
 # Alexis Smith
 ### AI Governance & Risk | Clinical Strategist | Technical Project Manager
+**[LinkedIn](https://www.linkedin.com/in/alexis-s2/) | [GitHub](https://github.com/alex1sl/AI-Clinical-Governance-Portfolio) | [Email Me](mailto:alesmith283@gmail.com)**
 
-**[LinkedIn](https://www.linkedin.com/in/alexis-s2/) | [GitHub Portfolio](https://github.com/alex1sl/AI-Clinical-Governance-Portfolio) | [Email](mailto:alesmith283@gmail.com)**
 
 ---
 
