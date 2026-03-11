@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +6,14 @@
     <title>Model Card | HEDIS AI Governance</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f9; color: #333; line-height: 1.6; margin: 0; }
-        .nav-header { background: #000; padding: 15px; border-bottom: 5px solid #4682b4; }
-        .back-link { color: #b0e0e6; text-decoration: none; font-weight: bold; }
+        .nav-header { background: #000; padding: 15px; border-bottom: 4px solid #4682b4; }
+        .back-link { color: #b0e0e6; text-decoration: none; font-weight: bold; border: 1px solid #b0e0e6; padding: 5px 10px; border-radius: 4px; }
         .container { width: 85%; max-width: 950px; margin: 40px auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h1 { color: #000; font-size: 2.2rem; border-bottom: 3px solid #b0e0e6; padding-bottom: 10px; }
         h2 { color: #4682b4; margin-top: 2rem; border-left: 5px solid #000; padding-left: 15px; }
-        .out-of-scope { background: #fff4f4; border: 1px solid #ffcdd2; padding: 20px; border-radius: 5px; margin: 15px 0; }
         .nist-box { background: #eef6f9; border: 1px solid #b0e0e6; padding: 20px; border-radius: 5px; margin-top: 10px; }
+        .met { color: #2e7d32; font-weight: bold; }
+        .not-met { color: #c62828; font-weight: bold; }
         table { width: 100%; border-collapse: collapse; margin-top: 15px; }
         th, td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
         th { background-color: #f8f9fa; color: #000; }
@@ -24,60 +26,61 @@
     </div>
 
     <div class="container">
-        <h1>Technical Model Card: HEDIS Asthma 30-Day Follow-Up</h1>
+        <h1>Model Card: HEDIS Asthma Logic Validator</h1>
         
         <h2>1. Model Details</h2>
-        <p><strong>Primary Function:</strong> Extraction and calculation of follow-up windows for the HEDIS Asthma measure (MY 2026).</p>
         <ul>
-            <li><strong>Framework:</strong> NIST AI Risk Management Framework (RMF 1.0)</li>
-            <li><strong>Governance Lead:</strong> Alexis Smith, NP</li>
-            <li><strong>Architecture:</strong> LLM-augmented clinical audit trail</li>
+            <li><strong>Governance Lead:</strong> Alexis Smith</li>
+            <li><strong>Base Model:</strong> GPT-4.5</li>
+            <li><strong>Version:</strong> 1.0 (NIST RMF 1.0 Aligned)</li>
+            <li><strong>Audit Focus:</strong> HEDIS MY 2026 Compliance</li>
         </ul>
 
-        <h2>2. Out of Scope</h2>
-        <div class="out-of-scope">
-            <strong>Strict Constraint:</strong> This model is strictly for <strong>administrative audit support</strong>. It is not designed or authorized for autonomous clinical diagnosis, medication adjustments, or any decision-making that bypasses a licensed Human-in-the-Loop (HITL) reviewer.
-        </div>
-
-        <h2>3. Clinical Governance & Red-Teaming Strategy</h2>
-        <p>I conducted targeted Red-Teaming to expose chronological logic failures within the model's extraction process.</p>
+        <h2>2. Intended Use & Compliance Measures</h2>
+        <p>This model is an <strong>Audit Support Tool</strong> used to verify if patients diagnosed with Asthma in Outpatient, Urgent Care, or Hospital settings received a 30-day follow-up encounter.</p>
         <div class="nist-box">
-            <strong>Key Findings:</strong>
+            <strong>HEDIS Success Criteria:</strong>
             <ul>
-                <li><strong>Leap Year Sensitivity:</strong> Identified calculation errors for patients discharged in late February.</li>
-                <li><strong>Fragmented Data:</strong> Model struggled to reconcile dates when discharge summaries were split across multiple PDF pages.</li>
-                <li><strong>Holiday Lag:</strong> Evaluation of model behavior when the 30-day window expired on a federal holiday or weekend.</li>
+                <li><span class="met">MET:</span> Follow-up scheduled/seen within ≤ 30 days of discharge or initial visit.</li>
+                <li><span class="not-met">NOT MET:</span> Encounter date > 30 days or no follow-up identified.</li>
             </ul>
         </div>
 
-        <h2>4. Risk Mitigation & Safety Guards</h2>
+        <h2>3. Date Calculation Logic (Evaluation Data)</h2>
+        <p>Red-teaming was performed to test the model's ability to handle complex calendar logic without "hallucinating" dates.</p>
+        <ul>
+            <li><strong>Test Case 1:</strong> Leap Year transitions (Feb 29).</li>
+            <li><strong>Test Case 2:</strong> Non-business days/Holiday window expirations.</li>
+            <li><strong>Test Case 3:</strong> Cross-setting date extraction (Urgent Care vs. Hospital).</li>
+        </ul>
+
+        <h2>4. Key Metrics & Risk Mitigation</h2>
         <table>
             <tr>
                 <th>Risk Identified</th>
-                <th>Safety Control (NIST-Aligned)</th>
+                <th>Safety Guard (NIST Control)</th>
             </tr>
             <tr>
                 <td><strong>Chronological Drift</strong></td>
-                <td>Threshold Logic: Any AI-generated follow-up date exceeding 28 days is flagged for mandatory NP review.</td>
+                <td><strong>Threshold Logic:</strong> Automated flag for any date > 28 days for mandatory human review.</td>
             </tr>
             <tr>
-                <td><strong>Data Hallucination</strong></td>
-                <td>SQL Cross-Validation: Automated check comparing AI output against raw <code>Discharge_Date</code> timestamps.</td>
+                <td><strong>Logic Hallucination</strong></td>
+                <td><strong>Source Citation:</strong> Model is required to cite the specific data point used for calculation.</td>
             </tr>
             <tr>
-                <td><strong>Contextual Bias</strong></td>
-                <td>HEDIS Benchmark Alignment: Ensuring the model adheres to NCQA updated measurement years (MY 2026).</td>
+                <td><strong>Reporting Error</strong></td>
+                <td><strong>SQL Cross-Validation:</strong> Queries audit AI output against raw dataset timestamps.</td>
             </tr>
         </table>
 
-        <h2>5. Technical Proof & Validation</h2>
-        <p>This model card is supported by SQL audit scripts and risk visualizations within this repository. All validations are designed to satisfy <strong>Healthcare Quality & Safety</strong> standards.</p>
+        <h2>5. Governance Conclusion</h2>
+        <p>This model is strictly for <strong>administrative governance</strong> to ensure the highest quality measures are met. It does not provide clinical diagnosis or autonomous decision-making.</p>
 
         <div style="margin-top: 50px; text-align: center; border-top: 1px solid #eee; padding-top: 20px;">
-            <a href="index.html" style="color: #4682b4; font-weight: bold; text-decoration: none;">View Project Summary & SQL Logic</a>
+            <a href="index.html" style="color: #4682b4; font-weight: bold; text-decoration: none;">Return to Main Portfolio</a>
         </div>
     </div>
 
 </body>
 </html>
-
