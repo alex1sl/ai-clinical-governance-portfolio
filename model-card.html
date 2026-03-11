@@ -2,63 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Model Card: HEDIS AI Governance</title>
+    <title>Model Card | HEDIS AI Governance</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f9; color: #333; margin: 0; padding: 0; }
-        .nav-header { background: #000; padding: 15px; border-bottom: 4px solid #4682b4; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f9; color: #333; line-height: 1.6; margin: 0; }
+        .nav-header { background: #000; padding: 15px; border-bottom: 5px solid #4682b4; }
         .back-link { color: #b0e0e6; text-decoration: none; font-weight: bold; }
-        .container { width: 80%; max-width: 900px; margin: 40px auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h1, h2 { color: #000; border-bottom: 2px solid #eef6f9; padding-bottom: 10px; }
-        .risk-tag { background: #ffebee; color: #c62828; padding: 5px 10px; border-radius: 4px; font-size: 0.9rem; font-weight: bold; }
-        .out-of-scope { background: #f9f9f9; border-left: 5px solid #000; padding: 15px; font-style: italic; }
+        .container { width: 85%; max-width: 950px; margin: 40px auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #000; font-size: 2.2rem; border-bottom: 3px solid #b0e0e6; padding-bottom: 10px; }
+        h2 { color: #4682b4; margin-top: 2rem; border-left: 5px solid #000; padding-left: 15px; }
+        .out-of-scope { background: #fff4f4; border: 1px solid #ffcdd2; padding: 20px; border-radius: 5px; margin: 15px 0; }
+        .nist-box { background: #eef6f9; border: 1px solid #b0e0e6; padding: 20px; border-radius: 5px; margin-top: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
+        th { background-color: #f8f9fa; color: #000; }
     </style>
 </head>
 <body>
 
     <div class="nav-header">
-        <a href="index.html" class="back-link">← Return to Portfolio</a>
+        <a href="index.html" class="back-link">← Return to Portfolio Home</a>
     </div>
 
     <div class="container">
-        <h1>Technical Model Card: HEDIS MY 2026</h1>
+        <h1>Technical Model Card: HEDIS Asthma 30-Day Follow-Up</h1>
         
-        <h2>Model Details</h2>
+        <h2>1. Model Details</h2>
+        <p><strong>Primary Function:</strong> Extraction and calculation of follow-up windows for the HEDIS Asthma measure (MY 2026).</p>
         <ul>
-            <li><strong>Model Type:</strong> LLM (Optimized for Clinical Summarization)</li>
-            <li><strong>Framework Alignment:</strong> NIST RMF 1.0</li>
+            <li><strong>Framework:</strong> NIST AI Risk Management Framework (RMF 1.0)</li>
             <li><strong>Governance Lead:</strong> Alexis Smith, NP</li>
+            <li><strong>Architecture:</strong> LLM-augmented clinical audit trail</li>
         </ul>
 
-        <h2>Intended Use</h2>
-        <p>This model is intended to assist in identifying 30-day follow-up windows for asthma patients to meet HEDIS quality benchmarks.</p>
-
-        <h2 style="color: #c62828;">Out of Scope</h2>
+        <h2>2. Out of Scope</h2>
         <div class="out-of-scope">
-            This model is NOT for autonomous clinical diagnosis or medication adjustment. All outputs are advisory and require HITL validation.
+            <strong>Strict Constraint:</strong> This model is strictly for <strong>administrative audit support</strong>. It is not designed or authorized for autonomous clinical diagnosis, medication adjustments, or any decision-making that bypasses a licensed Human-in-the-Loop (HITL) reviewer.
         </div>
 
-        <h2>Risk & Mitigation: Chronological Logic</h2>
-        <p>Testing revealed significant errors during <strong>Leap Year</strong> cycles and holiday weekends.</p>
-        
-        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-            <tr style="background: #eef6f9;">
-                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Risk Identified</th>
-                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Governance Control</th>
+        <h2>3. Clinical Governance & Red-Teaming Strategy</h2>
+        <p>I conducted targeted Red-Teaming to expose chronological logic failures within the model's extraction process.</p>
+        <div class="nist-box">
+            <strong>Key Findings:</strong>
+            <ul>
+                <li><strong>Leap Year Sensitivity:</strong> Identified calculation errors for patients discharged in late February.</li>
+                <li><strong>Fragmented Data:</strong> Model struggled to reconcile dates when discharge summaries were split across multiple PDF pages.</li>
+                <li><strong>Holiday Lag:</strong> Evaluation of model behavior when the 30-day window expired on a federal holiday or weekend.</li>
+            </ul>
+        </div>
+
+        <h2>4. Risk Mitigation & Safety Guards</h2>
+        <table>
+            <tr>
+                <th>Risk Identified</th>
+                <th>Safety Control (NIST-Aligned)</th>
             </tr>
             <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">30-Day Window Breach</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">28-Day Threshold Flag for HITL review.</td>
+                <td><strong>Chronological Drift</strong></td>
+                <td>Threshold Logic: Any AI-generated follow-up date exceeding 28 days is flagged for mandatory NP review.</td>
             </tr>
             <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">Date Hallucination</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">SQL-based audit of processed dates vs. raw data.</td>
+                <td><strong>Data Hallucination</strong></td>
+                <td>SQL Cross-Validation: Automated check comparing AI output against raw <code>Discharge_Date</code> timestamps.</td>
+            </tr>
+            <tr>
+                <td><strong>Contextual Bias</strong></td>
+                <td>HEDIS Benchmark Alignment: Ensuring the model adheres to NCQA updated measurement years (MY 2026).</td>
             </tr>
         </table>
 
-        <div style="margin-top: 50px; text-align: center;">
-            <a href="index.html" style="color: #4682b4; text-decoration: underline;">Back to Main Page</a>
+        <h2>5. Technical Proof & Validation</h2>
+        <p>This model card is supported by SQL audit scripts and risk visualizations within this repository. All validations are designed to satisfy <strong>Healthcare Quality & Safety</strong> standards.</p>
+
+        <div style="margin-top: 50px; text-align: center; border-top: 1px solid #eee; padding-top: 20px;">
+            <a href="index.html" style="color: #4682b4; font-weight: bold; text-decoration: none;">View Project Summary & SQL Logic</a>
         </div>
     </div>
 
 </body>
 </html>
+
