@@ -136,7 +136,11 @@
                 <li><span class="checkmark">✔</span><span><strong>Data Integrity:</strong> Used SQL to verify 30-day date logic against underlying data.</span></li>
             </ul>
         </div>
-
+<div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+    <a href="model-card.html" style="background-color: #000; color: #b0e0e6; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; border: 2px solid #4682b4;">
+        View Technical Model Card & NIST Controls →
+    </a>
+</div>
         <div class="section">
             <h2>Deep Dive: HEDIS Asthma 30-Day Follow-Up</h2>
             
