@@ -157,34 +157,39 @@
             <p>Using the <strong>NIST RMF 1.0</strong> framework, I established safety buffers to mitigate these logic risks:</p>
      <div class="section">
             <h2>Technical Validation: SQL Audit Logic</h2>
-            <p>To ensure the AI Model’s chronological logic was accurate, I developed SQL audit queries to cross-reference the model's "Met/Not Met" claims against the raw clinical timestamps.</p>
+            <p>To ensure the AI Model’s chronological logic was accurate, I developed SQL audit queries to cross-reference the model's "Met/Not Met" claims against the 30-day regulatory window for HEDIS MY 2026.</p>
             
-            <div style="background-color: #000; color: #b0e0e6; padding: 20px; border-radius: 5px; font-family: 'Courier New', monospace; overflow-x: auto;">
-                <p style="color: #6a9fb5; margin-top: 0;">-- Identifying HEDIS 30-Day Follow-Up Gaps</p>
+            <div style="background-color: #000; color: #b0e0e6; padding: 25px; border-radius: 8px; font-family: 'Courier New', monospace; overflow-x: auto; border-left: 5px solid #4682b4;">
+                <p style="color: #6a9fb5; margin-top: 0;">-- HEDIS MY 2026 Asthma Follow-Up Validation</p>
                 <code style="color: #fff;">
                     SELECT <br>
                     &nbsp;&nbsp;PatientID, <br>
-                    &nbsp;&nbsp;Discharge_Date, <br>
-                    &nbsp;&nbsp;FollowUp_Date, <br>
-                    &nbsp;&nbsp;DATEDIFF(day, Discharge_Date, FollowUp_Date) AS Days_To_FollowUp <br>
-                    FROM HEDIS_Audit_Log <br>
-                    WHERE DATEDIFF(day, Discharge_Date, FollowUp_Date) > 30 <br>
-                    OR FollowUp_Date IS NULL;
+                    &nbsp;&nbsp;ER_Discharge_Date, <br>
+                    &nbsp;&nbsp;AI_Calculated_FollowUp_Date, <br>
+                    &nbsp;&nbsp;<span style="color: #6a9fb5;">-- Calculate variance between AI output and Regulatory Truth</span><br>
+                    &nbsp;&nbsp;DATEDIFF(day, ER_Discharge_Date, AI_Calculated_FollowUp_Date) AS Days_To_FollowUp, <br>
+                    &nbsp;&nbsp;CASE <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;WHEN DATEDIFF(day, ER_Discharge_Date, AI_Calculated_FollowUp_Date) > 30 THEN '<span style="color: #ff6b6b;">FAIL: Out of Compliance</span>' <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;WHEN DATEDIFF(day, ER_Discharge_Date, AI_Calculated_FollowUp_Date) BETWEEN 28 AND 30 THEN '<span style="color: #ffd93d;">PASS: High Risk</span>' <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;ELSE 'PASS: Compliant' <br>
+                    &nbsp;&nbsp;END AS Compliance_Status <br>
+                    FROM Clinical_AI_Audit_Log <br>
+                    WHERE Diagnosis_Code LIKE 'J45%'; <span style="color: #6a9fb5;">-- Asthma ICD-10</span>
                 </code>
             </div>
 
-            <h3 style="margin-top: 20px; color: #000;">Validation Outcomes:</h3>
+            <h3 style="margin-top: 25px; color: #000;">Audit Outcomes:</h3>
             <ul style="padding-left: 20px;">
-                <li><strong>Logic Correction:</strong> Identified cases where the LLM calculated a 30-day window based on a 31-day month, missing the HEDIS deadline by 24 hours.</li>
-                <li><strong>Source Verification:</strong> Verified that dates pulled from Urgent Care records matched the primary Hospital discharge timeline.</li>
+                <li><strong>Proactive Risk Detection:</strong> The 28-30 day "High Risk" flag identified schedules that, while technically compliant, were vulnerable to cancellation risks that would result in a "Not Met" HEDIS status.</li>
+                <li><strong>Diagnosis Precision:</strong> Utilized ICD-10 wildcard filtering (`J45%`) to isolate the asthma-specific cohort across disparate clinical settings.</li>
             </ul>
 
-            <div style="text-align: center; margin-top: 25px;">
-                <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/hedis_validation.sql" target="_blank" style="color: #4682b4; font-weight: bold; text-decoration: underline;">
-                    View Full SQL Repository on GitHub →
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://github.com/AlexisSmith/YOUR_REPO_NAME/blob/main/hedis_validation.sql" target="_blank" style="background-color: #4682b4; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
+                    View Detailed SQL Audit Repository →
                 </a>
             </div>
-        </div>       
+     </div>     
             <div class="grid-container">
                 <div class="grid-item">
                     <strong style="color: #4682b4;">28-Day Flag</strong>
