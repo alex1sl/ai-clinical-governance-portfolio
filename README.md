@@ -134,7 +134,6 @@
                 <li><span class="checkmark">✔</span><span><strong>Validation Scenarios:</strong> Built comprehensive scenarios to stress-test governance frameworks.</span></li>
                 <li><span class="checkmark">✔</span><span><strong>Governance & HITL:</strong> Applied risk controls and Human-in-the-Loop review protocols.</span></li>
                 <li><span class="checkmark">✔</span><span><strong>Data Integrity:</strong> Used SQL to verify 30-day date logic against underlying data.</span></li>
-                <li><span class="checkmark">✔</span><span><strong>Regulatory Alignment:</strong> Worked within HEDIS-aligned constraints for quality reporting.</span></li>
             </ul>
         </div>
 
