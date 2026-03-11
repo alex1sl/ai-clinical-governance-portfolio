@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +29,7 @@
         }
         h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
         h2 { color: #000; border-bottom: 2px solid #b0e0e6; padding-bottom: 10px; }
-        h3 { color: #4682b4; margin-top: 0; }
+        h3 { color: #4682b4; margin-top: 1.5rem; }
         .highlight { color: #4682b4; font-weight: bold; }
         
         .section { 
@@ -39,7 +40,6 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
         }
         
-        /* Technical Snapshot Table */
         .snapshot-table { 
             width: 100%; 
             border-collapse: collapse; 
@@ -55,12 +55,12 @@
             color: #000; 
         }
 
-        /* What This Proves Section */
         .proves-box { 
             background-color: #eef6f9; 
             border: 1px solid #b0e0e6; 
             padding: 25px; 
             border-radius: 8px; 
+            margin-bottom: 25px;
         }
         .proves-list { 
             list-style-type: none; 
@@ -75,6 +75,18 @@
             color: #4682b4; 
             margin-right: 12px; 
             font-weight: bold; 
+        }
+
+        .grid-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .grid-item {
+            flex: 1;
+            border: 1px solid #b0e0e6;
+            padding: 15px;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -94,23 +106,23 @@
             <table class="snapshot-table">
                 <tr>
                     <td class="label">Problem Evaluated</td>
-                    <td>Algorithmic bias and safety gaps in clinical decision support systems.</td>
+                    <td>Chronological logic failures in LLM outputs for HEDIS compliance scheduling.</td>
                 </tr>
                 <tr>
                     <td class="label">Methodology</td>
-                    <td>Applied <span class="highlight">NIST RMF 1.0</span> with Human-in-the-Loop (HITL) oversight.</td>
+                    <td>Applied <span class="highlight">NIST RMF 1.0</span> (Map, Measure, Manage) with HITL oversight.</td>
                 </tr>
                 <tr>
                     <td class="label">Risks Identified</td>
-                    <td>Temporal logic errors and lack of clinical context in model outputs.</td>
+                    <td>Leap Year calculation errors and 30-day follow-up window breaches.</td>
                 </tr>
                 <tr>
                     <td class="label">Controls Applied</td>
-                    <td>Red-teaming, rigorous model cards, and continuous safety monitoring.</td>
+                    <td>28-day HITL safety flags, Red-Teaming, and Model Card documentation.</td>
                 </tr>
                 <tr>
                     <td class="label">Tools Used</td>
-                    <td>SQL (Data Validation), GitHub (Version Control), Tableau (Risk Visualization).</td>
+                    <td>SQL (Date Validation), GitHub (Version Control), Tableau (Risk Visualization).</td>
                 </tr>
             </table>
         </div>
@@ -118,32 +130,39 @@
         <div class="proves-box">
             <h3>What This Proves</h3>
             <ul class="proves-list">
-                <li>
-                    <span class="checkmark">✔</span>
-                    <span><strong>Healthcare Quality Logic:</strong> Evaluated LLM outputs for clinical accuracy and logic.</span>
-                </li>
-                <li>
-                    <span class="checkmark">✔</span>
-                    <span><strong>Validation Scenarios:</strong> Built comprehensive scenarios to stress-test governance frameworks.</span>
-                </li>
-                <li>
-                    <span class="checkmark">✔</span>
-                    <span><strong>Governance & HITL:</strong> Applied risk controls and Human-in-the-Loop review protocols.</span>
-                </li>
-                <li>
-                    <span class="checkmark">✔</span>
-                    <span><strong>Data Integrity:</strong> Used SQL to verify date logic against underlying clinical data.</span>
-                </li>
-                <li>
-                    <span class="checkmark">✔</span>
-                    <span><strong>Regulatory Alignment:</strong> Worked within HEDIS-aligned constraints for quality reporting.</span>
-                </li>
+                <li><span class="checkmark">✔</span><span><strong>Healthcare Quality Logic:</strong> Evaluated LLM outputs for clinical accuracy and scheduling logic.</span></li>
+                <li><span class="checkmark">✔</span><span><strong>Validation Scenarios:</strong> Built comprehensive scenarios to stress-test governance frameworks.</span></li>
+                <li><span class="checkmark">✔</span><span><strong>Governance & HITL:</strong> Applied risk controls and Human-in-the-Loop review protocols.</span></li>
+                <li><span class="checkmark">✔</span><span><strong>Data Integrity:</strong> Used SQL to verify 30-day date logic against underlying data.</span></li>
+                <li><span class="checkmark">✔</span><span><strong>Regulatory Alignment:</strong> Worked within HEDIS-aligned constraints for quality reporting.</span></li>
             </ul>
         </div>
 
-        <div class="section" style="margin-top: 25px;">
-            <h2>Project Deep Dive</h2>
-            <p><em>Section in progress: We will populate this next with your specific Temporal Logic and Model Card data...</em></p>
+        <div class="section">
+            <h2>Deep Dive: HEDIS Asthma 30-Day Follow-Up</h2>
+            
+            <h3>Data Integrity & Chronological Logic</h3>
+            <p>The core evaluation focused on testing the AI's ability to accurately calculate the 30-day follow-up window mandated by <strong>HEDIS MY 2026</strong>. Ensuring chronological accuracy is vital for meeting quality benchmarks.</p>
+            <ul style="padding-left: 20px;">
+                <li><strong>The Challenge:</strong> The model failed to maintain accurate date logic on edge cases, such as Leap Years, resulting in dates outside the compliance window.</li>
+                <li><strong>The SQL Control:</strong> I utilized SQL to audit the AI-generated <code>FollowUp_Date</code> against the <code>Discharge_Date</code> to identify any chronological discrepancies.</li>
+            </ul>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+            <h3>Governance Protocol (HITL)</h3>
+            <p>Using the <strong>NIST RMF 1.0</strong> framework, I established safety buffers to mitigate these logic risks:</p>
+            
+            <div class="grid-container">
+                <div class="grid-item">
+                    <strong style="color: #4682b4;">28-Day Flag</strong>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;">Any AI-generated date exceeding 28 days triggers a <strong>Human-in-the-Loop (HITL)</strong> review to prevent HEDIS breaches.</p>
+                </div>
+                <div class="grid-item">
+                    <strong style="color: #4682b4;">Red-Teaming Strategy</strong>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;">Tested specifically for Leap Year sequences to expose and document model logic failures in time-sensitive workflows.</p>
+                </div>
+            </div>
         </div>
 
     </div>
